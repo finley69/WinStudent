@@ -51,7 +51,7 @@ namespace WinStudent
             this.miExit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(565, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(746, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,14 +67,14 @@ namespace WinStudent
             // subAddStudent
             // 
             this.subAddStudent.Name = "subAddStudent";
-            this.subAddStudent.Size = new System.Drawing.Size(180, 22);
+            this.subAddStudent.Size = new System.Drawing.Size(124, 22);
             this.subAddStudent.Text = "新增学生";
             this.subAddStudent.Click += new System.EventHandler(this.subAddStudent_Click);
             // 
             // subStudentList
             // 
             this.subStudentList.Name = "subStudentList";
-            this.subStudentList.Size = new System.Drawing.Size(180, 22);
+            this.subStudentList.Size = new System.Drawing.Size(124, 22);
             this.subStudentList.Text = "学生列表";
             this.subStudentList.Click += new System.EventHandler(this.subStudentList_Click);
             // 
@@ -127,7 +127,7 @@ namespace WinStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 325);
+            this.ClientSize = new System.Drawing.Size(746, 436);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

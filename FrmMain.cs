@@ -110,7 +110,7 @@ namespace WinStudent
         /// <param name="e"></param>
         private void miExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Exit();//退出应用程序
         }
         /// <summary>
         /// 窗体关闭，退出程序
@@ -120,7 +120,7 @@ namespace WinStudent
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("你确定要退出系统吗？", "退出提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
                 Application.ExitThread();//退出当前线程上的消息循环
             }

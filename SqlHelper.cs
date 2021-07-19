@@ -60,7 +60,7 @@ namespace WinStudent
                 da.SelectCommand = cmd;
                 //SqlDataAdapter da = new SqlDataAdapter();
                 //数据填充
-               
+                da.Fill(dt);
                 //关闭连接
                 //conn.Close();
             }

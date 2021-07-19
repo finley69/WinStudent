@@ -16,14 +16,14 @@ namespace WinStudent
         {
             InitializeComponent();
         }
-        ////单例 只有一个实例
-        //private static FrmStudentList frmStudentList = null;
-        //public static FrmStudentList CreatInstance()
-        //{
-        //    if (frmStudentList == null || frmStudentList.IsDisposed)
-        //        frmStudentList = new FrmStudentList();
-        //    return frmStudentList;
+        //单例 只有一个实例
+        private static FrmStudentList frmStudentList = null;
+        public static FrmStudentList CreatInstance()
+        {
+            if (frmStudentList == null || frmStudentList.IsDisposed)
+                frmStudentList = new FrmStudentList();
+            return frmStudentList;
 
-        //}
+        }
     }
 }
