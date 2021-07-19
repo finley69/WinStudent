@@ -30,11 +30,11 @@ namespace WinStudent
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboGrades = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtClassName = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
+            this.txtClassName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboGrades = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvClassList = new System.Windows.Forms.DataGridView();
             this.ClassId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,24 +61,23 @@ namespace WinStudent
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "查询条件";
             // 
-            // label1
+            // btnFind
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "年级：";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.btnFind.Location = new System.Drawing.Point(424, 22);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 23);
+            this.btnFind.TabIndex = 4;
+            this.btnFind.Text = "查询";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
-            // cboGrades
+            // txtClassName
             // 
-            this.cboGrades.FormattingEnabled = true;
-            this.cboGrades.Location = new System.Drawing.Point(83, 24);
-            this.cboGrades.Name = "cboGrades";
-            this.cboGrades.Size = new System.Drawing.Size(121, 20);
-            this.cboGrades.TabIndex = 1;
-            this.cboGrades.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.txtClassName.Location = new System.Drawing.Point(286, 22);
+            this.txtClassName.Name = "txtClassName";
+            this.txtClassName.Size = new System.Drawing.Size(100, 21);
+            this.txtClassName.TabIndex = 3;
+            this.txtClassName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -90,23 +89,24 @@ namespace WinStudent
             this.label2.Text = "班名：";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // txtClassName
+            // cboGrades
             // 
-            this.txtClassName.Location = new System.Drawing.Point(286, 22);
-            this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(100, 21);
-            this.txtClassName.TabIndex = 3;
-            this.txtClassName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.cboGrades.FormattingEnabled = true;
+            this.cboGrades.Location = new System.Drawing.Point(83, 24);
+            this.cboGrades.Name = "cboGrades";
+            this.cboGrades.Size = new System.Drawing.Size(121, 20);
+            this.cboGrades.TabIndex = 1;
+            this.cboGrades.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // btnFind
+            // label1
             // 
-            this.btnFind.Location = new System.Drawing.Point(424, 22);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(75, 23);
-            this.btnFind.TabIndex = 4;
-            this.btnFind.Text = "查询";
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.button1_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "年级：";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvClassList
             // 
