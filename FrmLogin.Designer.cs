@@ -86,6 +86,7 @@ namespace WinStudent
             // 
             this.txtUserPwd.Location = new System.Drawing.Point(184, 119);
             this.txtUserPwd.Name = "txtUserPwd";
+            this.txtUserPwd.PasswordChar = '*';
             this.txtUserPwd.Size = new System.Drawing.Size(163, 21);
             this.txtUserPwd.TabIndex = 2;
             // 

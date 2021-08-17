@@ -12,7 +12,7 @@ namespace WinStudent
     class SqlHelper
     {
         //private string connString = "server =DESKTOP-4RV0QLQ;database = StudentNewDB;uid=sa;pwd=flzxsqc668.;";//Sql Server身份验证 
-        private static readonly string connString = ConfigurationManager.ConnectionStrings["connStr"].ConnectionString;
+        public static readonly string connString = ConfigurationManager.ConnectionStrings["connStr"].ConnectionString;
         public static object ExecuteScalar(string sql,params SqlParameter[] paras)
         {
             //建立与数据库的连接
@@ -33,6 +33,32 @@ namespace WinStudent
             }
             return o;
         }
+        /// <summary>
+        /// 执行查询，返回SqlDataReader
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="paras"></param>
+        /// <returns></returns>
+        public static SqlDataReader ExecuteReader(string sql,params SqlParameter[] paras)
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            try
+            { 
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddRange(paras);
+                SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                 return dr;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("执行查询出现异常",ex);
+            }
+           
+        }
+
         /// <summary>
         /// 返回DataTable
         /// </summary>
@@ -65,6 +91,32 @@ namespace WinStudent
                 //conn.Close();
             }
             return dt;
+        }
+        /// <summary>
+        /// 返回受影响的行数 Insert Update Delete
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="paras"></param>
+        /// <returns></returns>
+        public static int ExcuteNonQuery(string sql,params SqlParameter[] paras)
+        {
+            //建立与数据库的连接
+            int count = 0;
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                //创建Command对象
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                //cmd.CommandType = CommandType.StoredProcedure;//存储过程
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddRange(paras);
+                //打开连接
+                conn.Open();
+                //执行命令 要求必须在连接状态
+                count = cmd.ExecuteNonQuery();//返回受影响的行数
+                //关闭连接
+                //conn.Close();
+            }
+            return count;
         }
     }
 }

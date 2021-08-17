@@ -33,6 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Huike.Core, Version=1.0.3114.16001, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\进阶\如何连接数据库的例子\ConnectDB\bin\Debug\Huike.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Logger">
+      <HintPath>E:\进阶\日志组件例子\Log\Log\bin\Debug\Logger.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -64,6 +71,12 @@
     </Compile>
     <Compile Include="FrmClassList.Designer.cs">
       <DependentUpon>FrmClassList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditStudent.Designer.cs">
+      <DependentUpon>FrmEditStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGradeList.cs">
       <SubType>Form</SubType>
@@ -101,6 +114,9 @@
     <EmbeddedResource Include="FrmClassList.resx">
       <DependentUpon>FrmClassList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditStudent.resx">
+      <DependentUpon>FrmEditStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmGradeList.resx">
       <DependentUpon>FrmGradeList.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +150,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Huike.Core.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
