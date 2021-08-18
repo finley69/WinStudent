@@ -279,7 +279,7 @@ namespace WinStudent
                             }
                             trans.Commit();
                         }
-                        catch (SqlException )
+                        catch (SqlException ex )
                         {
                             trans.Rollback();
                             MessageBox.Show("删除学生出现异常！", "删除学生提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
