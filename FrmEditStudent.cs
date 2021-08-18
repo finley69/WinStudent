@@ -17,6 +17,7 @@ namespace WinStudent
         {
             InitializeComponent();
         }
+        private Action reLoad = null;
         private int stuId = 0;
         //public FrmEditStudent(int _stuId)
         //{
@@ -35,9 +36,11 @@ namespace WinStudent
         private void InitStuInfo()
         {
            //获取到StuId
-           if(this.Tag!=null &&this.Tag.ToString()!="")
+           if(this.Tag!=null)
             {
-                int.TryParse(this.Tag.ToString(), out stuId);
+                TagObject tagObject = (TagObject)this.Tag;
+                stuId = tagObject.EditId;
+                reLoad = tagObject.Reload;//赋值
             }
             //查询出来
             string sql = "select StuName,Sex,ClassId,Phone from StudentInfo where StuId=@StuId";
@@ -132,7 +135,8 @@ namespace WinStudent
             if (count > 0)
             {
                 MessageBox.Show($"学生:{stuName} 修改成功！", "修改学生提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //提示成功后，想刷新学生列表 跨页面刷新 委托
+                //提示成功后，想刷新学生列表 跨页面刷新 委托 列表页面定义委托，列表页面加载数据列表这个方法赋值给委托，同时传过去----修改页面； 修改页面，定义委托，把传过来的委托赋值给本页面定义的委托，修改成功后，调用委托。
+                reLoad.Invoke();
                 
 
             }
@@ -141,6 +145,11 @@ namespace WinStudent
                 MessageBox.Show("该学生修改失败，请检查！", "修改学生提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

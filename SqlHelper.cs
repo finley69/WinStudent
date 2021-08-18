@@ -113,10 +113,57 @@ namespace WinStudent
                 conn.Open();
                 //执行命令 要求必须在连接状态
                 count = cmd.ExecuteNonQuery();//返回受影响的行数
+                cmd.Parameters.Clear();
                 //关闭连接
                 //conn.Close();
             }
             return count;
+        }
+        /// <summary>
+        /// 事务处理
+        /// </summary>
+        /// <param name="comList"></param>
+        /// <returns></returns>
+        public static bool ExecuteTrans(List<CommandInfo> comList)
+        {
+            using (SqlConnection conn=new SqlConnection(connString))
+            {
+                conn.Open();
+                SqlTransaction trans = conn.BeginTransaction();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.Transaction = trans;
+                try
+                {
+                    int count = 0;
+                    for (int i = 0; i < comList.Count; i++)
+                    {
+                        cmd.CommandText = comList[i].CommandText;
+                        if (comList[i].IsProc)
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                        }
+                        else
+                        {
+                            cmd.CommandType = CommandType.Text;
+                        }
+                        if (comList[i].Parameters.Length > 0)
+                        {
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.AddRange(comList[i].Parameters);
+                        }
+                        count += cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+                    trans.Commit();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    trans.Rollback();
+                    throw new Exception("执行事务出现异常",ex);
+                }
+            }
         }
     }
 }

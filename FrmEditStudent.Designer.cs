@@ -50,6 +50,7 @@ namespace WinStudent
             this.btnClose.TabIndex = 21;
             this.btnClose.Text = "关闭";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnEdit
             // 

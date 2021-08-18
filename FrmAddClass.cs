@@ -18,11 +18,6 @@ namespace WinStudent
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmAddClass_Load(object sender, EventArgs e)
         {
             InitGradeList();//加载年级列表

@@ -17,9 +17,14 @@ namespace WinStudent
         {
             InitializeComponent();
         }
+
+        //内置委托 Action 可以不带参数，带参数最多16个 不带返回值
+        //Func 可以不带参数，带参数最多16个 带一个返回值
+
+        private Action reLoad = null;
         //单例 只有一个实例
         private static FrmStudentList frmStudentList = null;
-        private int count;
+        private int count = 0;
 
         public static FrmStudentList CreatInstance()
         {
@@ -152,9 +157,15 @@ namespace WinStudent
                 {
                     //修改操作 打开修改页面，并把stuId给传过去
                     //传值：1.构造函数 2.Tag
+                    reLoad = LoadAllStudentList;//赋值委托
                     int stuId = (int)dr["StuId"];
                     FrmEditStudent frmEdit = new FrmEditStudent();
-                    frmEdit.Tag = stuId;
+                    //传值
+                    frmEdit.Tag = new TagObject()
+                    {
+                        EditId = stuId,
+                        Reload = reLoad
+                    };
                     frmEdit.MdiParent = this.MdiParent;//指定修改页面的父容器
                     frmEdit.Show();
 
@@ -212,7 +223,11 @@ namespace WinStudent
                 }
             }
         }
-
+        /// <summary>
+        /// 多条删除
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //选择
@@ -264,7 +279,7 @@ namespace WinStudent
                             }
                             trans.Commit();
                         }
-                        catch (SqlException ex)
+                        catch (SqlException )
                         {
                             trans.Rollback();
                             MessageBox.Show("删除学生出现异常！", "删除学生提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
