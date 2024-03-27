@@ -14,6 +14,7 @@ namespace WinStudent
     {
         public FrmMain()
         {
+            //1111111111222222222223333333333
             InitializeComponent();
         }
         /// <summary>
