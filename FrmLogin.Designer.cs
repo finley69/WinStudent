@@ -39,9 +39,10 @@ namespace WinStudent
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(247, 194);
+            this.btnExit.Location = new System.Drawing.Point(353, 242);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(81, 30);
+            this.btnExit.Size = new System.Drawing.Size(108, 38);
             this.btnExit.TabIndex = 0;
             this.btnExit.Text = "退出";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -50,26 +51,29 @@ namespace WinStudent
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(100, 75);
+            this.label1.Location = new System.Drawing.Point(133, 94);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "账号：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(100, 128);
+            this.label2.Location = new System.Drawing.Point(133, 160);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "密码：";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(102, 194);
+            this.btnLogin.Location = new System.Drawing.Point(136, 242);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(81, 30);
+            this.btnLogin.Size = new System.Drawing.Size(108, 38);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "登录";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -77,24 +81,26 @@ namespace WinStudent
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(184, 75);
+            this.txtUserName.Location = new System.Drawing.Point(245, 94);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(163, 21);
+            this.txtUserName.Size = new System.Drawing.Size(216, 25);
             this.txtUserName.TabIndex = 2;
             // 
             // txtUserPwd
             // 
-            this.txtUserPwd.Location = new System.Drawing.Point(184, 119);
+            this.txtUserPwd.Location = new System.Drawing.Point(245, 149);
+            this.txtUserPwd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserPwd.Name = "txtUserPwd";
             this.txtUserPwd.PasswordChar = '*';
-            this.txtUserPwd.Size = new System.Drawing.Size(163, 21);
+            this.txtUserPwd.Size = new System.Drawing.Size(216, 25);
             this.txtUserPwd.TabIndex = 2;
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 303);
+            this.ClientSize = new System.Drawing.Size(593, 379);
             this.Controls.Add(this.txtUserPwd);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label2);
@@ -102,6 +108,7 @@ namespace WinStudent
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.Text = "登录页面";

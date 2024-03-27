@@ -15,6 +15,7 @@ namespace WinStudent
     {
         public FrmLogin()
         {
+            //vs2022modified
             InitializeComponent();
         }
 
