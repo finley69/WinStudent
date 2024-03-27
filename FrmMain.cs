@@ -26,7 +26,7 @@ namespace WinStudent
         {
             FrmAddStudent fAddStudent = new FrmAddStudent();
             fAddStudent.MdiParent = this;
-            fAddStudent.Show();//顶级窗体 不能显示到MDI容器中
+            fAddStudent.Show();//顶级窗体 不能显示到MDI容器中----------你好呀
         }
         /// <summary>
         /// 学生列表 不可以同时打开多个页面
