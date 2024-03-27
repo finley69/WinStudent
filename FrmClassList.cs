@@ -46,7 +46,7 @@ namespace WinStudent
             DataRow dr = dtGradeList.NewRow();
             dr["GradeId"] = 0;
             dr["GradeName"] = "请选择";
-            //dtGradeList.Rows.Add(dr);//添加到最后一个111112222
+            //dtGradeList.Rows.Add(dr);//添加到最后一个1111122224444
             dtGradeList.Rows.InsertAt(dr, 0);//添加到第一个
 
             cboGrades.DataSource = dtGradeList;
